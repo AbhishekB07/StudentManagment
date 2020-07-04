@@ -36,3 +36,42 @@ C:\Users\Abhishek Bhardwaj\source\repos\DuckTaleSolutionTask\obj\Debug\netcoreap
 C:\Users\Abhishek Bhardwaj\source\repos\DuckTaleSolutionTask\obj\Debug\netcoreapp2.1\Razor\Views\Student\ViewStudent.cshtml.g.cs
 C:\Users\Abhishek Bhardwaj\source\repos\DuckTaleSolutionTask\bin\Debug\netcoreapp2.1\libman.json
 C:\Users\Abhishek Bhardwaj\source\repos\DuckTaleSolutionTask\obj\Debug\netcoreapp2.1\DuckTaleSolutionTask.csproj.CoreCompileInputs.cache
+F:\Application\GitCloned\StudentManagment-master\bin\Debug\netcoreapp2.1\appsettings.Development.json
+F:\Application\GitCloned\StudentManagment-master\bin\Debug\netcoreapp2.1\appsettings.json
+F:\Application\GitCloned\StudentManagment-master\bin\Debug\netcoreapp2.1\libman.json
+F:\Application\GitCloned\StudentManagment-master\bin\Debug\netcoreapp2.1\Properties\launchSettings.json
+F:\Application\GitCloned\StudentManagment-master\bin\Debug\netcoreapp2.1\DuckTaleSolutionTask.deps.json
+F:\Application\GitCloned\StudentManagment-master\bin\Debug\netcoreapp2.1\DuckTaleSolutionTask.runtimeconfig.json
+F:\Application\GitCloned\StudentManagment-master\bin\Debug\netcoreapp2.1\DuckTaleSolutionTask.runtimeconfig.dev.json
+F:\Application\GitCloned\StudentManagment-master\bin\Debug\netcoreapp2.1\DuckTaleSolutionTask.dll
+F:\Application\GitCloned\StudentManagment-master\bin\Debug\netcoreapp2.1\DuckTaleSolutionTask.pdb
+F:\Application\GitCloned\StudentManagment-master\bin\Debug\netcoreapp2.1\DuckTaleSolutionTask.Views.dll
+F:\Application\GitCloned\StudentManagment-master\bin\Debug\netcoreapp2.1\DuckTaleSolutionTask.Views.pdb
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\DuckTaleSolutionTask.csprojAssemblyReference.cache
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\DuckTaleSolutionTask.csproj.CoreCompileInputs.cache
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\DuckTaleSolutionTask.RazorAssemblyInfo.cache
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\DuckTaleSolutionTask.RazorAssemblyInfo.cs
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\DuckTaleSolutionTask.AssemblyInfoInputs.cache
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\DuckTaleSolutionTask.AssemblyInfo.cs
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\DuckTaleSolutionTask.TagHelpers.input.cache
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\DuckTaleSolutionTask.TagHelpers.output.cache
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\DuckTaleSolutionTask.RazorCoreGenerate.cache
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.cshtml.g.cs
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.cshtml.g.cs
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\Razor\Views\Student\About.cshtml.g.cs
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\Razor\Views\Student\Contact.cshtml.g.cs
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\Razor\Views\Student\Index.cshtml.g.cs
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\Razor\Views\Student\Privacy.cshtml.g.cs
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\Razor\Views\Student\ViewStudent.cshtml.g.cs
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.cshtml.g.cs
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.cshtml.g.cs
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\DuckTaleSolutionTask.RazorTargetAssemblyInfo.cache
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\DuckTaleSolutionTask.RazorTargetAssemblyInfo.cs
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\DuckTaleSolutionTask.Views.pdb
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\DuckTaleSolutionTask.dll
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\DuckTaleSolutionTask.pdb
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\DuckTaleSolutionTask.genruntimeconfig.cache
+F:\Application\GitCloned\StudentManagment-master\obj\Debug\netcoreapp2.1\DuckTaleSolutionTask.csproj.CopyComplete
+F:\Application\GitCloned\StudentManagment-master\bin\Debug\netcoreapp2.1\web.config

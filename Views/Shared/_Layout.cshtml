@@ -20,11 +20,9 @@
 <body>
 
     <partial name="_CookieConsentPartial" />
-
     <div class="container body-content">
         @RenderBody()
-        <hr />
-       
+        <hr />       
     </div>
 
     <environment include="Development">
@@ -33,6 +31,7 @@
         <script src="~/lib/jquery/dist/jquery-datatable.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap-datatable.min.js"></script>
         <script src="~/js/PageScript/StudentDetailScript.js"></script>
+        <script src="~/js/common.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
         <script src="~/js/sweetalert.js"></script>
     </environment>

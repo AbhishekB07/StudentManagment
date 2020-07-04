@@ -5,29 +5,21 @@ const AddModalCode = 2;
 
 var arrDeletedSubjectID = new Array();
 
-function Subtable(subject) {
+function subtable(subject) {
     // `d` is the original data object for the row
     var html = '<table class="table subtable" cellpadding="5" cellspacing="0" border="0" style="padding-left:50px;">';
     html += '<thead><tr><th>Subject</th><th>Marks</th></tr></thead>'
     if (subject.length > 0) {
-
-
-
         $.each(subject, function (ind, val) {
             html += '<tr>';
             html += '<td>' + val.subjectName + '</td>';
             html += '<td>' + val.marks + '</td>';
             html += '</tr>';
         })
-
-
-
     }
     else {
         '<tr><td colspan="3">No Subjects Found !</td></tr>'
     }
-
-
     html += '</table>';
 
     return html;
@@ -35,15 +27,15 @@ function Subtable(subject) {
 
 //Student datatable initializer: this function is defined to initialize or populate student details in datatable
 //on every call to it.
-function StudentTable() {
+function studentTable() {
     Table = $('#StudentTableId').DataTable({
 
         columnDefs: [
             { responsivePriority: 7, targets: -7, orderable: false },
-            { responsivePriority: 6, targets: -6, orderable: false },          // Student Id
-            { responsivePriority: 5, targets: -5, orderable: false },          // Student First Name
+            { responsivePriority: 6, targets: -6, orderable: true },          // Student Id
+            { responsivePriority: 5, targets: -5, orderable: true },          // Student First Name
             { responsivePriority: 4, targets: -4, orderable: true },          // Student Last Name
-            { responsivePriority: 3, targets: -3, orderable: true },          // Student Class
+            { responsivePriority: 3, targets: -3, orderable: false },          // Student Class
             { responsivePriority: 2, targets: -2, orderable: false },          // Student Subject
             { responsivePriority: 1, targets: -1, orderable: false },          // Student Marks
             { responsivePriority: 0, targets: 0, orderable: false },          // Student Marks
@@ -105,10 +97,10 @@ function StudentTable() {
                 $('td:eq(5)', nRow).html(Subjects);
                 $('td:eq(6)', nRow).html(Marks);
 
-               
+
             }
 
-            $('td:eq(7)', nRow).html('<a onclick="EditModal(this)" >Edit</a> | <a onclick="deleteStudent(this)">Delete</a>');
+            $('td:eq(7)', nRow).html('<a onclick="editModal(this)" >Edit</a> | <a onclick="deleteStudent(this)">Delete</a>');
 
 
         }
@@ -117,7 +109,7 @@ function StudentTable() {
 }
 
 //This function is defined to validate student detail form
-function ValidateForm(FormId) {
+function validateForm(FormId) {
     var bIsValidate = true;
     try {
 
@@ -154,7 +146,7 @@ function ValidateForm(FormId) {
 }
 
 //This function is defined to remove validation from the control.
-function OnFocusRemoveValidation(obj) {
+function onFocusRemoveValidation(obj) {
     $(obj).removeClass('error');
 }
 
@@ -176,43 +168,19 @@ function deleteStudent(obj) {
             else {
                 alert('Some error occured!');
             }
-            StudentTable();
+            studentTable();
             $('#StudentCreateFormId').modal('hide');
 
         }).fail(function (jqXHR, textStatus, errorThrown) {
-            console.log(' Add Student > Error: ' + errorThrown);
-        });
-        //$.ajax({
-        //    type: 'DELETE',
-        //    url: "/" + strHostName + "/Delete/",
-        //    data: JSON.stringify({ id: nID }),
-        //    contentType: "application/json; charset=utf-8",
-        //    cache: false,
-        //    success: function (data) {
-        //        if (data) {
-        //            swal({
-        //                title: "Success",
-        //                text: "Student was deleted from record.",
-        //                icon: "success",
-        //            });
-        //            StudentTable();
-        //        }
-        //    },
-        //    error: function () {
-
-        //    },
-        //    complete: function () {
-
-        //    }
-        //})
+            console.log(' Delete Student > Error: ' + errorThrown);
+        });       
     }
 
     event.stopPropagation();
-
 }
 
 //This function is defined to clear update modal controls after exit.
-function ClearAddModalControl() {
+function clearAddModalControl() {
     $("#StudentDetailForm .closebtn").each(function () {
         $(this).trigger('click');
     });
@@ -220,7 +188,7 @@ function ClearAddModalControl() {
 }
 
 //This function is defined to clear update modal controls after exit.
-function ClearUpdateModalControl() {
+function clearUpdateModalControl() {
     $('#UpdateStudentFormId input').val('');
     $("#UpdateStudentFormId .closebtn").each(function () {
         $(this).trigger('click');
@@ -231,7 +199,7 @@ function ClearUpdateModalControl() {
 
 //This function is defined to update student data by an ajax call to the server after collecting the
 //values from the update student detail form.
-function UpdateStudent() {
+function updateStudent() {
     function getStudentFirstName() {
         var value = $('#update-first-name-id').val().trim();
         if (value == undefined || value == null) {
@@ -262,7 +230,7 @@ function UpdateStudent() {
         }
     }
     try {
-        if (ValidateForm('UpdateStudentDetailForm')) {
+        if (validateForm('UpdateStudentDetailForm')) {
             var StudentData = $('#UpdateStudentFormId').data('StudentDetail');
 
             var ListOfSubject = new Array();
@@ -276,7 +244,6 @@ function UpdateStudent() {
             })
 
             var StudentDetail = {
-
                 Id: StudentData.id,
                 FirstName: getStudentFirstName(),
                 LastName: getStudentLastName(),
@@ -292,7 +259,7 @@ function UpdateStudent() {
                 $('#UpdateStudentFormId').modal('hide');
                 // console.log(data);
                 if (data.status) {
-                    StudentTable();
+                    studentTable();
                     swal({
                         title: "Success",
                         text: "Student added successfully!",
@@ -307,37 +274,8 @@ function UpdateStudent() {
                     });
                 }
             }).fail(function (jqXHR, textStatus, errorThrown) {
-                console.log(' Add Student > Error: ' + errorThrown);
+                console.log(' Update Student > Error: ' + errorThrown);
             });
-            //$.ajax({
-            //    type: 'POST',
-            //    url: "/" + strHostName + "/UpdateStudent",
-            //    data: JSON.stringify(StudentDetail),
-            //    contentType: "application/json; charset=utf-8",
-            //    cache: false,
-            //    success: function (data) {
-            //        if (data.bStatus) {
-            //            swal({
-            //                title: "Success",
-            //                text: "Student updated successfully!",
-            //                icon: "success",
-            //            });
-            //        }
-            //        else {
-            //            alert('Some error occured!');
-            //        }
-            //    },
-            //    error: function () {
-
-            //    },
-            //    complete: function () {
-            //        StudentTable();
-            //        ClearUpdateModalControl();
-            //        $('#UpdateStudentFormId').modal('hide');
-            //    }
-            //})
-
-            //console.log(ListOfSubject);
         }
         else {
             console.log('Please fill all required details.');
@@ -358,7 +296,7 @@ function getType(obj) {
 }
 
 //This function is defined to pop-up update modal to make changes to all ready existing values.
-function EditModal(obj) {
+function editModal(obj) {
     var data = Table.row($(obj).closest('tr')).data();
 
     //console.log(data);
@@ -381,10 +319,10 @@ function EditModal(obj) {
 
 //This function is defined to add new student by getting student detail from the user and
 //executing ajax request to the server to save it to database.
-function AddStudent() {
+function addStudent() {
 
     try {
-        if (ValidateForm('StudentDetailForm')) {
+        if (validateForm('StudentDetailForm')) {
             var StudentDetail;
             var ListOfSubject = new Array();
 
@@ -405,7 +343,7 @@ function AddStudent() {
                 'Subjects': ListOfSubject
             });
 
-            console.log(StudentDetail);
+            //console.log(StudentDetail);
 
 
             ajaxHelper('/api/add', Method.POST, StudentDetail).done(function (data) {
@@ -419,42 +357,12 @@ function AddStudent() {
                 else {
                     alert('Some error occured!');
                 }
-                StudentTable();
+                studentTable();
                 $('#StudentCreateFormId').modal('hide');
 
             }).fail(function (jqXHR, textStatus, errorThrown) {
                 console.log(' Add Student > Error: ' + errorThrown);
             });
-
-            //$.ajax({
-            //    url: '/Student/Add',
-            //    data: StudentDetail,
-            //    cache: false,
-            //    contentType: "application/json; charset=utf-8",
-            //    dataType: "json",
-            //    type: "POST",
-            //    success: function (data) {
-
-            //        if (data.bStatus) {
-            //            swal({
-            //                title: "Success",
-            //                text: "Student added successfully!",
-            //                icon: "success",
-            //            });
-            //        }
-            //        else {
-            //            alert('Some error occured!');
-            //        }
-
-            //    },
-            //    error: function () {
-
-            //    },
-            //    complete: function () {
-            //        StudentTable();
-            //        $('#StudentCreateFormId').modal('hide');
-            //    }
-            //})
 
             //console.log(ListOfSubject);
         }
@@ -543,11 +451,11 @@ function cloneSubjectElement(data, ncode) {
         _strHtml += ' <div class="row subject ">';
         _strHtml += '<div class="col-sm-12 col-md-6">';
         _strHtml += ' <div class="form-group">  <label class="control-label">Subject Name</label>';
-        _strHtml += '<div><input type="text" maxlength="30" placeholder="Enter name of the subject.." onfocus="OnFocusRemoveValidation(this)" class="form-control  required" name="subject-name" value="" ></div>';
+        _strHtml += '<div><input type="text" maxlength="30" placeholder="Enter name of the subject.." onfocus="onFocusRemoveValidation(this)" class="form-control  required" name="subject-name" value="" ></div>';
         _strHtml += '</div></div>';
         _strHtml += '<div class="col-sm-4">';
         _strHtml += '<div class="form-group"><label class="control-label" > Marks</label>';
-        _strHtml += '<div><input type="Number"  placeholder="Enter marks scored.." onfocus="OnFocusRemoveValidation(this)" class="form-control  required" onchange="handleChange(this);" name="marks" value="" ></div>';
+        _strHtml += '<div><input type="Number"  placeholder="Enter marks scored.." onfocus="onFocusRemoveValidation(this)" class="form-control  required" onchange="handleChange(this);" name="marks" value="" ></div>';
         _strHtml += '</div></div>  ';
 
 
@@ -567,11 +475,11 @@ function cloneSubjectElement(data, ncode) {
         _strHtml += ' <div class="row subject" data-subject-id="' + data.id + '">';
         _strHtml += '<div class="col-md-5 col-sm-5">';
         _strHtml += ' <div class="form-group">  <label class="control-label">Subject Name</label>';
-        _strHtml += '<div><input type="text" maxlength="30" placeholder="Enter name of the subject.." onfocus="OnFocusRemoveValidation(this)" class="form-control  required" name="subject-name" data-id="' + data.id + '" value="' + data.subjectName + '" ></div>';
+        _strHtml += '<div><input type="text" maxlength="30" placeholder="Enter name of the subject.." onfocus="onFocusRemoveValidation(this)" class="form-control  required" name="subject-name" data-id="' + data.id + '" value="' + data.subjectName + '" ></div>';
         _strHtml += '</div></div>';
         _strHtml += '<div class="col-md-5 col-sm-5">';
         _strHtml += '<div class="form-group"><label class="control-label" > Marks</label>';
-        _strHtml += '<div><input type="Number" onfocus="OnFocusRemoveValidation(this)" class="form-control  required" onchange="handleChange(this);" name="marks" value="' + data.marks + '"></div>';
+        _strHtml += '<div><input type="Number" onfocus="onFocusRemoveValidation(this)" class="form-control  required" onchange="handleChange(this);" name="marks" value="' + data.marks + '"></div>';
         _strHtml += '</div></div>  ';
         _strHtml += '<div class="col-sm-2"><span class="btn btn-default closebtn" onclick="removeSubjectElement(this,UpdateModalCode)" style="float:right;">x</div></div>';
         $('#update-subject-id').prepend(_strHtml);
@@ -581,7 +489,7 @@ function cloneSubjectElement(data, ncode) {
 }
 
 
-function GetStudentSubjectHtml(lstStudentSubject) {
+function getStudentSubjectHtml(lstStudentSubject) {
     var _strHtml = "";
     if (lstStudentSubject != null && lstStudentSubject != undefined) {
 
@@ -599,11 +507,20 @@ function GetStudentSubjectHtml(lstStudentSubject) {
     return _strHtml;
 }
 //Here the ready function defined to call all function on ready state of the page.
+
+//Input vaidation
+function handleChange(input) {
+    //console.log(input.value);
+    if (input.value < 0) input.value = 0;
+    if (input.value > 100) input.value = 100;
+}
+
+//Ready 
 $(document).ready(function () {
-    StudentTable();
+    studentTable();
     // Check values on change
     $('#UpdateStudentDetailForm').bind('change keyup', function () {
-        console.log('hello');
+        //console.log('hello');
         var disable = true;
         if (arrDeletedSubjectID.length > 0)
             disable = false;
@@ -629,7 +546,7 @@ $(document).ready(function () {
         $("#student-class-id").text(data.class);
 
         if (data.subjects != null && data.subjects != undefined) {
-            //$("#student-subject-id").html(GetStudentSubjectHtml(data.Subject));
+            //$("#student-subject-id").html(getStudentSubjectHtml(data.Subject));
             $('#student-subject-id').DataTable({
                 data: data.subjects,
                 destroy: true,
@@ -656,7 +573,7 @@ $(document).ready(function () {
         var tr = $(this).closest('tr');
         var row = Table.row(tr);
 
-        console.log(row);
+        //console.log(row);
         if (row.child.isShown()) {
             // This row is already open - close it
             row.child.hide();
@@ -664,7 +581,7 @@ $(document).ready(function () {
         }
         else {
             // Open this row
-            row.child(Subtable(row.data().subjects)).show();
+            row.child(subtable(row.data().subjects)).show();
             tr.addClass('shown');
         }
 
@@ -673,19 +590,14 @@ $(document).ready(function () {
 
     //pay attention to capital D, which is mandatory to retrieve "api" datatables' object, as @Lionel said
     $('#myInputTextField').keyup(function () {
-        StudentTable.search($(this).val()).draw();
+        studentTable.search($(this).val()).draw();
     })
 
     $(document).on('click', '#add-student-btn-id', function () {
-        ClearAddModalControl();
+        clearAddModalControl();
     })
 
 
 });
 
 
-function handleChange(input) {
-    console.log(input.value);
-    if (input.value < 0) input.value = 0;
-    if (input.value > 100) input.value = 100;
-}

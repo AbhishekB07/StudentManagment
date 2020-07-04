@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Abhishek Bhardwaj\\source\\repos\\DuckTaleSolutionTask\\DuckTaleSolutionTask.csproj": {}
+    "F:\\Application\\GitCloned\\StudentManagment-master\\DuckTaleSolutionTask.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Abhishek Bhardwaj\\source\\repos\\DuckTaleSolutionTask\\DuckTaleSolutionTask.csproj": {
+    "F:\\Application\\GitCloned\\StudentManagment-master\\DuckTaleSolutionTask.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Abhishek Bhardwaj\\source\\repos\\DuckTaleSolutionTask\\DuckTaleSolutionTask.csproj",
+        "projectUniqueName": "F:\\Application\\GitCloned\\StudentManagment-master\\DuckTaleSolutionTask.csproj",
         "projectName": "DuckTaleSolutionTask",
-        "projectPath": "C:\\Users\\Abhishek Bhardwaj\\source\\repos\\DuckTaleSolutionTask\\DuckTaleSolutionTask.csproj",
+        "projectPath": "F:\\Application\\GitCloned\\StudentManagment-master\\DuckTaleSolutionTask.csproj",
         "packagesPath": "C:\\Users\\Abhishek Bhardwaj\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Abhishek Bhardwaj\\source\\repos\\DuckTaleSolutionTask\\obj\\",
+        "outputPath": "F:\\Application\\GitCloned\\StudentManagment-master\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "U8bODII4cKnRDJGqvOJGcCHybSci16lpcpwaV9QMr414Lg+rfXpIrnqsN/+g8u/6RvRaDrG+RoJY4J28JSaLgg==",
+  "dgSpecHash": "6PjYLv+Oqv0cPcY1gorm99cxevvTRXrwWkcUMdB9PsHbRvUvBmnKhEAtoT7NQgHr7dk8ddC00CaxycDzELTK8A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Abhishek Bhardwaj\\source\\repos\\DuckTaleSolutionTask\\DuckTaleSolutionTask.csproj",
+  "projectFilePath": "F:\\Application\\GitCloned\\StudentManagment-master\\DuckTaleSolutionTask.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Abhishek Bhardwaj\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\Abhishek Bhardwaj\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",

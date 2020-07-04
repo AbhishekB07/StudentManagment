@@ -3,17 +3,7 @@
     ViewBag.Title = "Students Detail";
 }
 
-    <style>
-    td.details-control { background: url('https://datatables.net/examples/resources/details_open.png') no-repeat center center; cursor: pointer; }
-
-    tr.shown td.details-control { background: url('https://datatables.net/examples/resources/details_close.png') no-repeat center center; }
     
-    .subtable{
-        max-width:200px;
-    }
-    </style>
-
-<script src="~/js/common.js"></script>
 <div class="row container">
     <div class="col-sm-12 text-center">
         <h1>Student Management</h1> <button id="add-student-btn-id" class=" btn btn-primary text-right add-student-btn" style="float:right" data-toggle="modal" data-target="#StudentCreateFormId">Add Student</button>
@@ -26,9 +16,9 @@
                 <tr>
                     <th width="5%"></th>
                     <th width="5%">Id</th>
-                    <th width="8%">First Name</th>
-                    <th width="8%">Last Name</th>
-                    <th width="8%">Class</th>
+                    <th width="12%">First Name</th>
+                    <th width="12%">Last Name</th>
+                    <th width="12%">Class</th>
                     <th width="20%">Subject</th>
                     <th width="15%">Marks</th>
                     <th width="10%">Actions</th>
@@ -112,7 +102,7 @@
             </div>
 
             <div class="modal-footer ">
-                <button type="button" class="btn btn-success" onclick="AddStudent()"><span class="glyphicon glyphicon-ok-sign"></span> Add </button>
+                <button type="button" class="btn btn-success" onclick="addStudent()"><span class="glyphicon glyphicon-ok-sign"></span> Add </button>
                 <button type="button" class="btn btn-default" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel </button>
             </div>
         </div><!-- /.modal-content -->
@@ -177,8 +167,8 @@
             </div>
 
             <div class="modal-footer ">
-                <button type="button" class="btn btn-success" id="updateStudent" onclick="UpdateStudent()" disabled><span class="glyphicon glyphicon-ok-sign"></span> Update </button>
-                <button type="button" class="btn btn-default" onclick="ClearUpdateModalControl()" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel </button>
+                <button type="button" class="btn btn-success" id="updateStudent" onclick="updateStudent()" disabled><span class="glyphicon glyphicon-ok-sign"></span> Update </button>
+                <button type="button" class="btn btn-default" onclick="clearUpdateModalControl()" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Cancel </button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
@@ -246,7 +236,7 @@
 
             <div class="modal-footer ">
 
-                <button type="button" class="btn btn-default" onclick="ClearUpdateModalControl()" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close </button>
+                <button type="button" class="btn btn-default" onclick="clearUpdateModalControl()" data-dismiss="modal"><span class="glyphicon glyphicon-remove"></span> Close </button>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
